@@ -1,0 +1,154 @@
+<html>
+    <head>
+            
+            <script>
+                function usernameCheck()
+                {
+                    var x1=document.f1.uname.value;
+                    var a=/^[a-zA-Z0-9-_*]{6,14}/;
+                    if(x1.match(a))
+                        document.getElementById('g1').innerHTML="valid";
+                    else
+                        document.getElementById('g1').innerHTML="invalid";
+                }
+                    
+                function nameCheck()
+                {
+                    var x2=document.f1.name.value;
+                    var b=/^[a-zA-z*]/;
+                    if(x2.match(b))
+                        document.getElementById('g2').innerHTML="valid";
+                    else
+                        document.getElementById('g2').innerHTML="invalid";
+                    
+                }
+
+                function validateemail()
+                {
+                var x=document.f1.email.value;
+                var at=x.indexOf("@");
+                var dot=x.lastIndexOf(".");
+                var mail=x.slice(at+1,dot);
+                var m1="gmail";
+                if(at<1 || dot<at+2 || dot+2>=x.length || mail!=m1)
+                    document.getElementById('g3').innerHTML="Invalid";
+                else
+                    document.getElementById('g3').innerHTML="valid";
+               }
+
+               function pwd1Check()
+                {
+                    var x4=document.f1.pwd1.value;
+                    var c=/^[a-zA-Z0-9-_*]{10,}/;
+                    if(x4.match(c))
+                        document.getElementById('g4').innerHTML="valid";
+                    else
+                        document.getElementById('g4').innerHTML="invalid";
+                }
+
+                function pwd2Check()
+                {
+                    var x5=document.f1.pwd2.value;
+                    var c=/^[a-zA-Z0-9-_*]{10,}/;
+                    if(x5.match(c))
+                        document.getElementById('g5').innerHTML="valid";
+                    else
+                        document.getElementById('g5').innerHTML="invalid";
+                }
+
+                 function pwdvalidation()
+                 {
+                    var x4=document.f1.pwd1.value;
+                    var x5=document.f1.pwd2.value;
+                     if(x4==x5)
+                         alert("done");
+                     else
+                         alert("password does not match");
+                 }
+            </script>
+    </head>
+    <body bgcolor="pink">
+        <h1 align="center"> REGISTER </h1>
+        <h3 align="center"> Please fill in this form to create an account </h5>
+        <table>
+        <form name="f1">
+            <h3 align="center"> 
+            <tr>
+                <td> UserName : </td>
+                <td><input type="text" placeholder="Enter UserName" name="uname"  required onkeyup="usernameCheck()"/></td>
+                <td><p id="g1"></p></td>
+            </tr>
+            <tr>
+                <td> Name : </td> 
+                <td><input type="text" placeholder="Enter Name" name="name"  required onkeyup="nameCheck()"/></td>
+                <td><p id="g2"></p></td>
+            </tr>
+            <tr>
+                <td> Email : </td>     
+                <td><input type="email" placeholder="Enter Email" name="email" required onkeyup="validateemail()"></td>
+                <td><p id="g3"></p></td>
+            </tr>
+            <tr>
+                <td> Password : </td> 
+                <td><input type="text" placeholder="Enter Password" name="pwd1" required onkeyup="pwd1Check()"></td>
+                <td><p id="g4"></p></td>
+            </tr>
+            <tr>
+                <td> Retype Password : </td>
+                <td><input type="text" placeholder="Retype password"  name="pwd2" required onkeyup="pwd2Check()" onblur="pwdvalidation()"></td>
+                <td><p id="g5"></p></td>
+            </tr>
+            <tr>
+                <td> Dob : </td>      
+                <td> <input type="date" > </td>
+            </tr>
+            <tr>
+                <td> Gender : </td>   
+                <td>
+                    <input type="radio" name="Gender" value="Female" checked > Female 
+                    <input type="radio" name="Gender" value="Male"> Male  
+                    <input type="radio" name="Gender" value="Other">Other
+                </td> 
+            </tr>
+            <tr>
+                <td> Languages Known : </td>  
+                <td><input type="checkbox" name="languages Known" value="English">English 
+                    <input type="checkbox" name="languages Known" value="Tamil">Tamil 
+                    <input type="checkbox" name="languages Known" value="Kanada">Kanada 
+                    <input type="checkbox" name="languages Known" value="Telugu">Telugu 
+                </td>
+            </tr>
+            <tr>
+                <td> Contact Number : </td> 
+                <td><input type="text" placeholder="Phone Number"></td>
+            </tr>
+            <tr>
+                <td> Upload : </td>     
+                <td><input type="file" ></td>
+            </tr>
+            <tr>
+                <td> Favourite Color : </td>
+                <td><input type="color"></td>
+            </tr>
+            <tr>
+                <td> Download File : </td>
+                <td><a href="C:\Users\sokrishn\Pictures\cat.jpg">sorna</a> </td> 
+            </tr>
+            <tr>
+                <td> Qualification : </td>  
+                <td><select> 
+                              <option selected>BSC</option> 
+                              <option>BE</option> 
+                              <option>BTECH</option> </select> 
+                </td>
+            </tr>
+        
+            <tr>
+                <td><input type="submit"  value="submit"></td>
+                <td><input type="reset" value="reset"></td>
+            </tr>
+           </h3>
+        </form>
+        </table>
+    </body>
+</html>
