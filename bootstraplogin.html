@@ -1,0 +1,180 @@
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatiblr" content="IE=edge">
+                    <meta name="viewport"
+                    content="width=device-width,initial-scale=1">
+                    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                   
+    <head>
+            
+            <script>
+
+                function usernameCheck()
+                {
+                    var x1=document.f1.uname.value;
+                    var a=/^[a-zA-Z0-9-_*]{6,14}/;
+                    if(x1.match(a))
+                        document.getElementById('g1').innerHTML="valid";
+                    else
+                        document.getElementById('g1').innerHTML="invalid";
+                }
+                    
+                function nameCheck()
+                {
+                    var x2=document.f1.name.value;
+                    var b=/^[a-zA-z]/;
+                    if(x2.match(b))
+                        document.getElementById('g2').innerHTML="valid";
+                    else
+                        document.getElementById('g2').innerHTML="invalid";
+                    
+                }
+
+                function validateemail()
+                {
+                var x=document.f1.email.value;
+                var at=x.indexOf("@");
+                var dot=x.lastIndexOf(".");
+                var mail=x.slice(at+1,dot);
+                var m1="gmail";
+                if(at<1 || dot<at+2 || dot+2>=x.length || mail!=m1)
+                    document.getElementById('g3').innerHTML="Invalid";
+
+                else
+                    document.getElementById('g3').innerHTML="valid";
+               }
+
+               function pwd1Check()
+                {
+                    var x4=document.f1.pwd1.value;
+                    var c=/^[a-zA-Z0-9-_*]{10,}/;
+                    if(x4.match(c))
+                        document.getElementById('g4').innerHTML="valid";
+                    else
+                        document.getElementById('g4').innerHTML="invalid";
+                }
+
+                function pwd2Check()
+                {
+                    var x5=document.f1.pwd2.value;
+                    var c=/^[a-zA-Z0-9-_*]{10,}/;
+                    if(x5.match(c))
+                        document.getElementById('g5').innerHTML="valid";
+                    else
+                        document.getElementById('g5').innerHTML="invalid";
+                }
+
+                 function pwdvalidation()
+                 {
+                    var x4=document.f1.pwd1.value;
+                    var x5=document.f1.pwd2.value;
+                     if(x4==x5)
+                         alert("done");
+                     else
+                     {
+                         alert("password does not match");
+                         document.f1.pwd2.value=" ";
+                     }
+                 }
+
+                 function dobVal()
+                 {
+                     var da=document.f1.dob.value;
+                     var date=new Date(da);
+                     var yr=Number(date.getFullYear());
+
+                     var dd=2000;
+                     if(yr>=dd)
+                         document.getElementById('g6').innerHTML="invalid";
+                     else
+                         document.getElementById('g6').innerHTML="valid";
+                 }
+
+            </script>
+    </head>
+    <body class="table-info">
+        <h1 align="center"> REGISTER </h1>
+        <h3 align="center"> Please fill in this form to create an account </h5>
+        <center>
+        <div class="container">
+        <form name="f1"  action="login.html" >
+            
+            <h5> 
+                
+
+            <div>
+                <label for="username"><b>Username : </b></label>
+                <input type="text"  placeholder="Enter UserName" name="uname"  required onkeyup="usernameCheck()"/>
+                <p id="g1"></p>
+            </div>
+            <div> 
+                <label for="name"><b>Name :</b></label> 
+                <input type="text" placeholder="Enter Name" name="name"  required onkeyup="nameCheck()"/>
+                <p id="g2"></p>
+            </div>
+            <div> 
+                <label for="email"><b>Email : </b></label>      
+                <input type="email" placeholder="Enter Email" name="email" required onkeyup="validateemail()">
+                <p id="g3"></p></td>
+            </div>
+            <div>
+                <label for="psw1"><b>Password</b></label> 
+                <input type="text" placeholder="Enter Password" name="pwd1" required onkeyup="pwd1Check()">
+                <p id="g4"></p>
+            </div>
+            
+            <div> 
+                <label for="psw2">Retype Password : <b></b></label>
+                <input type="text" placeholder="Retype password"  name="pwd2" required onkeyup="pwd2Check()" onblur="pwdvalidation()">
+                <p id="g5"></p>
+            </div>
+            
+            <div> 
+                <label for="date"><b>DOB : </b></label>       
+                <input type="date" name="dob" required onkeyup="dobVal()"> 
+                <p id="g6"></p>
+            </div>
+           <div> 
+                <label for="gender"><b>Gender : </b></label>  
+                <input type="radio" name="Gender" value="Female" checked > Female 
+                <input type="radio" name="Gender" value="Male"> Male  
+                <input type="radio" name="Gender" value="Other">Other
+            </div>
+            <div> 
+                <label for="Languages known"><b>Languages known : </b></label>
+                <input type="checkbox" name="languages Known" value="English">English 
+                <input type="checkbox" name="languages Known" value="Tamil">Tamil 
+                <input type="checkbox" name="languages Known" value="Kanada">Kanada 
+                <input type="checkbox" name="languages Known" value="Telugu">Telugu 
+            </div>
+            <div> 
+                <label for="number"><b>Contact Number : </b></label> 
+                <input type="text" placeholder="Phone Number">
+            </div> 
+            <div> 
+                <label for="color"><b>Favourite Color : </b></label>
+                <input type="color">
+            </div>
+            <div><label for="file"><b> Download File : </b></label>
+                <a href="C:\Users\sokrishn\Pictures\cat.jpg">sorna</a> 
+            </div> 
+            <div><label for="degree"><b> Qualification : </b>
+                <select> 
+                    <option selected>BSC</option> 
+                    <option>BE</option> 
+                    <option>BTECH</option> </select> 
+            </div> 
+            
+            <div>
+                <input type="submit"  value="SUBMIT" class="btn btn-info btn-md">
+                <input type="reset" value="RESET" class="btn btn-info btn-md">
+            </div> 
+           </h5>
+        </form>
+    </div>
+    </center>
+    </body>
+</html>
